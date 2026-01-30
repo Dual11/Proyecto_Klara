@@ -1,0 +1,90 @@
+
+.main{
+    min-height: 100vh;
+    background: #283131;
+    color: #e0e0e0;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.header {
+    position: relative;
+    padding: 16px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    margin-bottom: 24px;
+}
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #54b0b7;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(255, 77, 77, 0.12);
+    transition: all 0.18s;
+    user-select: none;
+}
+.logo-left {
+    position: relative;
+    top: 50px;
+    right: 100px;
+
+}
+
+.logo-right {
+    position: relative;
+    top: 50px;
+    left: 100px;
+
+}
+
+.logo:hover {
+    background: rgba(255, 77, 77, 0.3);
+    transform: scale(1.04);
+}
+
+.logo:active {
+    transform: scale(0.97);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    text-align: center;
+}
+
+
+
+.container { max-width: 600px; margin: 40px auto; padding: 20px; font-family: system-ui; }
+.password-display {
+    font-size: 1.6rem;
+    padding: 16px;
+    background: #111;
+    color: white;
+    border-radius: 8px;
+    min-height: 60px;
+    margin: 16px 0;
+    letter-spacing: 2px;
+}
+.upper { font-weight: bold; color: #ffeb3b; }
+.rules-list { margin-top: 24px; }
+.rule {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+.ok  { background: #1b5e20; color: #a5d6a7; }
+.fail { background: #b71c1c; color: #ffcdd2; }
+.number { font-weight: bold; min-width: 100px; }
+.status { font-size: 1.4rem; font-weight: bold; }
+.next-rule-hint { color: #888; font-style: italic; padding: 12px; }
+.win-message { background: #2e7d32; color: white; padding: 16px; border-radius: 8px; text-align: center; font-size: 1.3rem; }
+
+
+
+

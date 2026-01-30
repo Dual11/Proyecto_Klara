@@ -1,33 +1,106 @@
-    import { useState, useEffect } from "react";
-    import passLength from "./validaciones/passLength.js";
-    import PassInput from "./components/passInput";
-    import "./index.css";
+import { useState, useMemo } from 'react';
 
-    // ← solo la función, sin ()
-    const validarTodo = [passLength];
+import PassInput from './componentes/PassInput';
+import PassDisplay from './componentes/PassDisplay';
+import Reglas from './componentes/Reglas';
+import './style.css'
 
-    export default function App() {
+import { regla1, regla2, regla3 } from './validaciones';
+
+
+//estos mensajes son provisionales, hay que cambiarlos
+const ALL_RULES = [
+    { fn: regla1, title: "Mínimo 5 caracteres" },
+    { fn: regla2, title: "Al menos una mayúscula" },
+    { fn: regla3, title: "Al menos un número" },
+    //añade el nuevo metodo, y su mensaje
+];
+
+export default function App() {
     const [password, setPassword] = useState('');
-    const [resultado, setResultado] = useState([]);
 
-    useEffect(() => {
-        if (!password.trim()) {
-        setResultado([]);
-        return;
+    //no es funcional este metodo
+    const resetGame = () => {
+        setPassword('');
+        alert("¿Ya te rendiste? JAJAJA... empieza de cero");
+
+    };
+
+
+    // Calculamos cuántas reglas hemos desbloqueado
+    const maxRuleIndex = useMemo(() => {
+        let index = 0;
+        while (index < ALL_RULES.length) {
+            const result = ALL_RULES[index].fn(password);
+            if (!result.ok) break;
+            index++;
         }
-
-        // Ahora sí: ejecutamos cada función con el password actual
-        const validar = validarTodo.map((fn) => fn(password));
-        setResultado(validar);
+        return index;
     }, [password]);
+
+    // Evaluamos SOLO las reglas activas
+    const ruleResults = useMemo(() => {
+        return ALL_RULES.slice(0, maxRuleIndex + 1).map((rule, i) => ({
+            number: i + 1,
+            ...rule.fn(password),
+            active: i <= maxRuleIndex
+        }));
+    }, [password, maxRuleIndex]);
 
     return (
         <div className="main">
-        <h3>Validador Tóxico de contraseña</h3>
-        <p className="msj">Ya te está juzgando</p>
 
-        <PassInput value={password} onChange={setPassword} />
+
+            <header className="header">
+                <div
+                    className="logo logo-right"
+                    onClick={resetGame}
+                    title="Pulsa para resetear todo (modo troll activado)"
+                >
+                    Alex & Iker
+                </div>
+                <h1>Validador de Contraseña Tóxico</h1>
+                <div
+                    className="logo logo-left"
+                    onClick={resetGame}
+                    title="Pulsa para resetear todo (modo troll activado)"
+                >
+                    Iker & Alex
+                </div>
+
+
+            </header>
+
+
+            <main className="container">
+                <PassInput value={password} onChange={setPassword}/>
+                <PassDisplay password={password}/>
+
+                <div className="rules-list">
+                {ruleResults.map((r) => (
+                        <Reglas
+                            key={r.number}
+                            number={r.number}
+                            message={r.message}
+                            ok={r.ok}
+                            active={r.active}
+                        />
+                    ))}
+
+                    {maxRuleIndex < ALL_RULES.length && (
+                        <div className="next-rule-hint">
+                            Siguiente regla desbloqueada cuando completes la actual...
+                        </div>
+                    )}
+
+                    {maxRuleIndex === ALL_RULES.length && (
+                        <div className="win-message">
+                            ¡Completaste las 3 reglas básicas! 🎉
+                        </div>
+                    )}
+                </div>
+            </main>
 
         </div>
     );
-    }
+}
