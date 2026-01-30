@@ -1,4 +1,4 @@
-.container {
+.main {
     max-width: 500px;
     margin: 40px auto;
     padding: 30px;
@@ -10,7 +10,7 @@
 }
 
 h1 { color: #ff4444; }
-.subtitle { color: #888; margin-bottom: 30px; }
+.msj { color: #888; margin-bottom: 30px; }
 
 .input {
     width: 100%;
