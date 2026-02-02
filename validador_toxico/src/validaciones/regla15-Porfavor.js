@@ -8,6 +8,6 @@ export default function regla14Palabra(password) {
 
     return {
         ok: true,
-        message: "Enhorabuenaxx."
+        message: "Enhorabuena!."
     };
 }

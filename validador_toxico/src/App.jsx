@@ -22,7 +22,7 @@ const ALL_RULES = [
     { fn: regla10, tittle: "Al menos 3 espacios" },
     { fn: regla11, tittle: "Al menos una X" },
     { fn: regla12, tittle: "Al menos un emoji de diablo" },
-    { fn: regla13, tittle: "Al menos ua tilde u ñ" },
+    { fn: regla13, tittle: "Al menos una tilde u ñ" },
     { fn: regla14, tittle: "Al menos una frase" },
     { fn: regla15, tittle: "Por favor" }
     //añade el nuevo metodo, y su mensaje
