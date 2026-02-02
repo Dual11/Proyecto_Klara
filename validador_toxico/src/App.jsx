@@ -12,17 +12,17 @@ const ALL_RULES = [
     { fn: regla2, title: "Al menos una mayúscula" },
     { fn: regla3, title: "Al menos un número" },
     { fn: regla4, title: "Al menos un Simbolo" },
-    { fn: regla5, tittle: "Al menos un espacio" },
-    { fn: regla6, tittle: "Al menos dos espacio" },
-    { fn: regla7, tittle: "Al menos dos números" },
-    { fn: regla8, tittle: "Al menos dos Simbolos" },
-    { fn: regla9, tittle: "Mínimo 25 carácteres" },
-    { fn: regla10, tittle: "Al menos 3 espacios" },
-    { fn: regla11, tittle: "Al menos una X" },
-    { fn: regla12, tittle: "Al menos un emoji de diablo" },
-    { fn: regla13, tittle: "Al menos una tilde u ñ" },
-    { fn: regla14, tittle: "Al menos una frase" },
-    { fn: regla15, tittle: "Por favor" }
+    { fn: regla5, title: "Al menos un espacio" },
+    { fn: regla6, title: "Al menos dos espacio" },
+    { fn: regla7, title: "Al menos dos números" },
+    { fn: regla8, title: "Al menos dos Simbolos" },
+    { fn: regla9, title: "Mínimo 25 carácteres" },
+    { fn: regla10, title: "Al menos 3 espacios" },
+    { fn: regla11, title: "Al menos una X" },
+    { fn: regla12, title: "Al menos un emoji de diablo" },
+    { fn: regla13, title: "Al menos una tilde u ñ" },
+    { fn: regla14, title: "Al menos una frase" },
+    { fn: regla15, title: "Por favor" }
 ];
 
 export default function App() {
