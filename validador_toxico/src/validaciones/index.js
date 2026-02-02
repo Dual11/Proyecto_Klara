@@ -1,3 +1,15 @@
 export { default as regla1 } from './regla1-Longitud.js';
 export { default as regla2 } from './regla2-Uppercase.js';
 export { default as regla3 } from './regla3-numero.js';
+export { default as regla4 } from './regla4-Simbolo.js';
+export { default as regla5 } from './regla5-Espacios.js';
+export { default as regla6 } from './regla6-Espacios2.js';
+export { default as regla7 } from './regla7-Numeros2.js';
+export { default as regla8 } from './regla8-Simbolos2.js';
+export { default as regla9 } from './regla9-Longitud.js';
+export { default as regla10 } from './regla10-Espacios3.js';
+export { default as regla11 } from './regla11-LetraX.js';
+export { default as regla12 } from './regla12-Emoji.js';
+export { default as regla13 } from './regla13-TildeUñ.js';
+export { default as regla14 } from './regla14-Palabra.js';
+export { default as regla15 } from './regla15-Porfavor.js';
