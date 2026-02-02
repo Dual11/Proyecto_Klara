@@ -7,8 +7,6 @@ import './style.css'
 
 import { regla1, regla2, regla3, regla4, regla5, regla6, regla7, regla8, regla9, regla10, regla11, regla12, regla13, regla14, regla15 } from './validaciones';
 
-
-//estos mensajes son provisionales, hay que cambiarlos
 const ALL_RULES = [
     { fn: regla1, title: "Mínimo 5 caracteres" },
     { fn: regla2, title: "Al menos una mayúscula" },
@@ -25,7 +23,6 @@ const ALL_RULES = [
     { fn: regla13, tittle: "Al menos una tilde u ñ" },
     { fn: regla14, tittle: "Al menos una frase" },
     { fn: regla15, tittle: "Por favor" }
-    //añade el nuevo metodo, y su mensaje
 ];
 
 export default function App() {
